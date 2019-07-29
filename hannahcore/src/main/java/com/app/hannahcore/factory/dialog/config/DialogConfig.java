@@ -74,12 +74,12 @@ public class DialogConfig {
 
     public static class Builder{
         private Context context;
-        private float alpha;
-        private boolean cancelable;
-        private boolean canceledOnTouchOutside;
+        private float alpha = 1f;
+        private boolean cancelable = true;
+        private boolean canceledOnTouchOutside = true;
         private View contentViewRes;
         private int animStyleRes = 0;
-        private int gravity;
+        private int gravity = Gravity.CENTER;
 
         public Builder setContext(Context context) {
             this.context = context;
