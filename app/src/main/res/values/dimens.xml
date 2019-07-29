@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 导航栏高度 -->
+    <dimen name="top_bar_height">49dp</dimen>
+    <dimen name="top_bar_height_l">44.5dp</dimen>
+    <!-- 导航栏高度+阴影高度 -->
+    <dimen name="top_bar_height_e">46dp</dimen>
+    <!--导航栏标题字体大小-->
+    <dimen name="title_font_size">17sp</dimen>
+    <dimen name="db_goods_wh">14dp</dimen>
+
+    <!--item的短间距-->
+    <dimen name="item_short_margin">5dp</dimen>
+    <!--item的长间距-->
+    <dimen name="item_long_margin">10dp</dimen>
+    <!--item的高度-->
+    <dimen name="goods_item_height">230dp</dimen>
+    <!--首页小编推荐和好伙计精选列表高度-->
+    <dimen name="recycler_view_height">1430dp</dimen>
+
+    <!--商品详情优惠券标签字体大小-->
+    <dimen name="coupon_text_size">11sp</dimen>
+    <!--商品详情评价标签字体大小-->
+    <dimen name="evaluate_text_size">12sp</dimen>
+    <!--分类页每个item的高度-->
+    <dimen name="sort_list_item_height">100dp</dimen>
+    <!--分类页第一个item的高度-->
+    <dimen name="sort_first_item_height">140dp</dimen>
+
+    <!--活动标签描边宽度-->
+    <dimen name="activity_tag_stroke">1dp</dimen>
+
+    <!--豆腐块间距-->
+    <dimen name="tofu_padding">5dp</dimen>
+</resources>

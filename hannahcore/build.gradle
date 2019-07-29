@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.compileOptions.javaVersion
+        targetCompatibility rootProject.ext.compileOptions.javaVersion
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation rootProject.ext.dependencies.constraintLayout
+    compileOnly rootProject.ext.dependencies.appCompat
+    testCompileOnly rootProject.ext.dependencies.junit
+    androidTestCompileOnly rootProject.ext.dependencies.runner
+    androidTestCompileOnly rootProject.ext.dependencies.espresso
+
+    //列表
+    compileOnly rootProject.ext.dependencies.recyclerView
+    compileOnly rootProject.ext.dependencies.quickAdapter
+    //图片加载
+    compileOnly rootProject.ext.dependencies.glide
+    annotationProcessor rootProject.ext.dependencies.glidecompiler
+    //卡片布局
+    compileOnly rootProject.ext.dependencies.cardView
+    //工具类
+    compileOnly rootProject.ext.dependencies.utilcode
+    //文件下载
+    compileOnly rootProject.ext.dependencies.filedownloader
+
+    //网络库
+    compileOnly rootProject.ext.dependencies.retrofit
+    compileOnly rootProject.ext.dependencies.converterGson
+    compileOnly rootProject.ext.dependencies.loggingInterceptor
+    compileOnly rootProject.ext.dependencies.retrofit2Rxjava2Adapter
+    compileOnly rootProject.ext.dependencies.rxjava
+    compileOnly rootProject.ext.dependencies.rxandroid
+    compileOnly rootProject.ext.dependencies.gson
+    compileOnly rootProject.ext.dependencies.stetho_okhttp3
+    //View动画依赖
+    compileOnly rootProject.ext.dependencies.easing
+    compileOnly rootProject.ext.dependencies.androidanimations
+    //图片选择库
+    compileOnly (rootProject.ext.dependencies.imagepicker ){
+        exclude module: 'support-v4'
+    }
+    //Zxing核心包
+    implementation 'com.google.zxing:core:3.3.0'
+}

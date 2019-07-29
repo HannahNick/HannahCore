@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/colorBgButton"/>
+    <corners android:bottomLeftRadius="@dimen/item_long_margin"
+        android:bottomRightRadius="@dimen/item_long_margin"/>
+</shape>

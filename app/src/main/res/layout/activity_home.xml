@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_bottommenu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.app.androidutildemo.widget.BottomMenu
+            android:id="@+id/menu_home"
+            android:tag="0"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:onClick="onSelect"
+            app:normalpic="@drawable/home_def"
+            app:presspic="@drawable/home_sel"
+            />
+        <com.app.androidutildemo.widget.BottomMenu
+            android:id="@+id/menu_sort"
+            android:tag="1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:onClick="onSelect"
+            app:normalpic="@drawable/classification_def"
+            app:presspic="@drawable/classification_sel"
+            />
+
+        <com.app.androidutildemo.widget.BottomMenu
+            android:id="@+id/menu_shopcart"
+            android:tag="2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:onClick="onSelect"
+            app:normalpic="@drawable/shopping_def"
+            app:presspic="@drawable/shopping_sel"
+            />
+
+        <com.app.androidutildemo.widget.BottomMenu
+            android:id="@+id/menu_me"
+            android:tag="3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:onClick="onSelect"
+            app:normalpic="@drawable/my_def"
+            app:presspic="@drawable/my_sel"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_contain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/ll_bottommenu"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/item_short_margin"
+    android:paddingBottom="@dimen/item_short_margin"
+    android:background="@color/white">
+    <ImageView
+        android:id="@+id/tv_news_prefix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/information"
+        android:layout_marginLeft="@dimen/item_long_margin"
+        />
+    <TextView
+        android:id="@+id/tv_vertical_line"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorgray"
+        android:layout_marginLeft="@dimen/item_long_margin"
+        android:layout_toRightOf="@id/tv_news_prefix"
+        android:layout_alignTop="@id/tv_news_prefix"
+        android:layout_alignBottom="@id/tv_news_prefix"
+        />
+
+    <TextView
+        android:id="@+id/tv_more_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="更多"
+        android:drawableRight="@drawable/more1"
+        android:layout_marginRight="@dimen/item_long_margin"
+        android:layout_alignParentRight="true"
+        android:textColor="#fd7a10"
+        android:drawablePadding="@dimen/item_short_margin"
+        />
+
+    <com.app.hannahcore.widget.MarqueeView
+        android:id="@+id/mv_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/tv_more_news"
+        android:layout_toRightOf="@id/tv_vertical_line"
+        android:layout_marginRight="@dimen/item_long_margin"
+        android:layout_marginLeft="@dimen/item_short_margin"
+        app:animDuration="1000"
+        app:interval="4000"
+        app:isSetAlphaAnim="true"
+        />
+</RelativeLayout>
