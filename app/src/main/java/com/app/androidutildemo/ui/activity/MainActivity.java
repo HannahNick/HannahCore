@@ -58,8 +58,8 @@ public class MainActivity extends SimpleBaseActivity {
 //            showCustomToast();
 //            startDownload();
 //            showNotification();
-//            checkVersion();
-            getAllPermission();
+            checkVersion();
+//            getAllPermission();
         });
         setStatusBarLightMode();
     }
@@ -74,7 +74,7 @@ public class MainActivity extends SimpleBaseActivity {
     }
 
     private void toActivity(){
-        Intent intent = new Intent(this, QrCodeActivity.class);
+        Intent intent = new Intent(this, ThirdActivity.class);
         ActivityUtils.startActivity(intent);
     }
 

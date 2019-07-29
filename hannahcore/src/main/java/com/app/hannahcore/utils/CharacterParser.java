@@ -2,6 +2,7 @@ package com.app.hannahcore.utils;
 
 /**
  * Created by Administrator on 2017/8/8.
+ * 字符解析,用于联系人拼音排序
  */
 public class CharacterParser {
     private static int[] pyvalue = new int[] {-20319, -20317, -20304, -20295, -20292, -20283, -20265, -20257, -20242, -20230, -20051, -20036, -20032,

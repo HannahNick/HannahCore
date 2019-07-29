@@ -21,4 +21,12 @@
         <attr name="sidebarRadius" format="dimension"/>
         <attr name="sidebarBallRadius" format="dimension"/>
     </declare-styleable>
+    <style name="dialogWindowBottomAnim" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+    <style name="dialogWindowTopAnim" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_top</item>
+    </style>
 </resources>

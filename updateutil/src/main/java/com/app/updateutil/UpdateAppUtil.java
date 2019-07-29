@@ -6,9 +6,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.app.hannahcore.factory.dialog.CustomDialog;
+import com.app.hannahcore.factory.dialog.config.DialogConfig;
+import com.app.hannahcore.factory.dialog.config.DialogConfig.Builder;
+import com.app.hannahcore.factory.dialog.impl.CommonDialogFactory;
 import com.app.hannahcore.manager.file.FileDownLoadManager;
 import com.app.hannahcore.manager.file.FileDownLoadManager.SimpleListener;
-import com.app.hannahcore.utils.DialogUtil;
 import com.blankj.utilcode.constant.PermissionConstants;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.FileUtils;
@@ -47,7 +50,7 @@ public class UpdateAppUtil {
     private int mCheckBy;//版本差异判断类型,通过版本号或者版本名判断
     private SimpleListener mDownloadCallBack;//下载回调
     private View mConfirmUpdateLayout;//更新的提示弹窗布局
-    private DialogUtil mConfirmRxDialog;//更新弹窗
+    private CustomDialog mConfirmRxDialog;//更新弹窗
 
 
     private UpdateAppUtil(Activity activity) {
@@ -122,10 +125,16 @@ public class UpdateAppUtil {
 
     //初始化更新提示弹窗
     private void initUpdateDialog(){
-        mConfirmRxDialog = new DialogUtil(mActivity,0.5f, Gravity.CENTER);
-        mConfirmRxDialog.setCancelable(!mIsForce);
-        mConfirmRxDialog.setCanceledOnTouchOutside(!mIsForce);
-        mConfirmRxDialog.setContentView(mConfirmUpdateLayout);
+        DialogConfig config = new Builder()
+                .setAlpha(1f)
+                .setGravity(Gravity.CENTER)
+                .setContext(mActivity)
+                .setCancelable(!mIsForce)
+                .setCanceledOnTouchOutside(!mIsForce)
+                .setContentViewRes(mConfirmUpdateLayout)
+                .build();
+        mConfirmRxDialog = CommonDialogFactory.getInstance().createDialog(mActivity, config);
+
         TextView title= mConfirmUpdateLayout.findViewById(R.id.update_title);
         TextView content = mConfirmUpdateLayout.findViewById(R.id.update_content);
         TextView cancel = mConfirmUpdateLayout.findViewById(R.id.update_cancel);
