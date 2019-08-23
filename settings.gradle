@@ -1,1 +1,1 @@
-include ':app', ':hannahcore', ':updateutil'
+include ':app', ':hannahcore', ':updateutil', ':ocr_ui'

@@ -38,6 +38,12 @@ public class DialogConfig {
     private int gravity;
     /**
      * 弹出动画
+     *
+     * 在style文件的示例
+     * <style name="dialogWindowTopAnim" parent="android:Animation" mce_bogus="1">
+     *         <item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+     *         <item name="android:windowExitAnimation">@anim/slide_out_top</item>
+     *     </style>
      */
     private int animStyleRes;
 

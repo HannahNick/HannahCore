@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
-        applicationId "com.app.androidutildemo"
-        minSdkVersion 17
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.13.1"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
     }
     buildTypes {
         release {
@@ -17,8 +17,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
+        sourceCompatibility rootProject.ext.compileOptions.javaVersion
+        targetCompatibility rootProject.ext.compileOptions.javaVersion
     }
 }
 
@@ -36,9 +36,12 @@ dependencies {
 
     implementation project(':hannahcore')
     implementation project(':updateutil')
+    implementation project(':ocr_ui')
 
     //图片加载
     implementation rootProject.ext.dependencies.glide
+    //gif
+    implementation rootProject.ext.dependencies.gifDrawable
     //卡片布局
     implementation rootProject.ext.dependencies.cardView
     //工具类

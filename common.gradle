@@ -1,10 +1,10 @@
 ext {
     android = [
-            compileSdkVersion        : 26,
-            buildToolsVersion        : '27.0.3',
-            applicationId            : "com.apec.heyguys",
+            compileSdkVersion        : 28,
+            buildToolsVersion        : '28.0.3',
+            applicationId            : "com.app.androidutildemo",
             minSdkVersion            : 17,
-            targetSdkVersion         : 26,
+            targetSdkVersion         : 28,
             testInstrumentationRunner: "android.support.test.runner.AndroidJUnitRunner",
             multiDexEnabled          : true,
 
@@ -13,9 +13,10 @@ ext {
             keyAlias                 : "nick",
             keyPassword              : "20171025",
 
-            versionCode              : 1130,
-            versionName              : "1.13.0",
-            versionRemark            : '''【新功能】申请售后功能【新功能】消息通知''',
+            versionCode              : 1180,
+            versionName              : "1.18.0",
+            versionRemark            : '''【新功能】新增商家店铺主页
+【其他】修复已知bug''',
             minifyEnabled            : true,
     ]
 
@@ -62,6 +63,8 @@ ext {
             //图片加载
             glide                  : 'com.github.bumptech.glide:glide:4.9.0',
             glidecompiler          : 'com.github.bumptech.glide:compiler:4.9.0',
+            //gif加载
+            gifDrawable            : 'pl.droidsonroids.gif:android-gif-drawable:1.2.8',
             //仿微信图片放大
             photoview              : 'com.bm.photoview:library:1.4.1',
 
@@ -70,12 +73,11 @@ ext {
             //下拉刷新
             SmartRefreshLayout     : 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-4',
             SmartRefreshHeader     : 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-4',
-            //gif加载
-            gifDrawable            : 'pl.droidsonroids.gif:android-gif-drawable:1.2.8',
             //卡片式轮播图
             MZBannerView           : 'com.github.pinguo-zhouwei:MZBannerView:v2.0.0',
             //图片选择库
-            imagepicker            : 'com.lzy.widget:imagepicker:0.6.1',
+//            imagepicker            : 'com.lzy.widget:imagepicker:0.6.1',
+            imagepicker            : 'com.github.Jimmuy:ImagePicker:v1.0.2',
             //侧滑删除
             swipelayout            : 'com.daimajia.swipelayout:library:1.2.0@aar',
             //View动画

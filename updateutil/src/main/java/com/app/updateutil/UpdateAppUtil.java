@@ -126,7 +126,6 @@ public class UpdateAppUtil {
     //初始化更新提示弹窗
     private void initUpdateDialog(){
         DialogConfig config = new Builder()
-                .setAlpha(1f)
                 .setGravity(Gravity.CENTER)
                 .setContext(mActivity)
                 .setCancelable(!mIsForce)

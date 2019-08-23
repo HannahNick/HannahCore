@@ -1,5 +1,8 @@
 package com.app.hannahcore.base;
 
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
+
 import io.reactivex.disposables.Disposable;
 
 /**
@@ -7,7 +10,24 @@ import io.reactivex.disposables.Disposable;
  * P层抽象,主要对网络请求做统一释放
  */
 
-public abstract class BasePresenter {
+public abstract class BasePresenter<T> {
+
+    protected Reference<T> mView;
+
+    public void attachView(T view){
+        mView = new WeakReference<>(view);
+    }
+
+    protected T getView(){
+        return mView.get();
+    }
+
+    public void detachView(){
+        if (mView!=null){
+            mView.clear();
+            mView = null;
+        }
+    }
 
     /**
      * 释放资源
