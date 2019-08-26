@@ -190,9 +190,8 @@ public class CameraActivity extends Activity {
 
         // 身份证本地能力初始化
         if (maskType == MaskView.MASK_TYPE_ID_CARD_FRONT || maskType == MaskView.MASK_TYPE_ID_CARD_BACK) {
-            initNative(token);
             if (isNativeEnable && !isNativeManual) {
-
+                initNative(token);
             }
         }
         cameraView.setEnableScan(isNativeEnable);
@@ -298,6 +297,7 @@ public class CameraActivity extends Activity {
                     }
                     Intent intent = new Intent();
                     intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, contentType);
+                    intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,outputFile.getAbsolutePath());
                     setResult(Activity.RESULT_OK, intent);
                     finish();
                 }
@@ -381,6 +381,7 @@ public class CameraActivity extends Activity {
                 }
                 Intent intent = new Intent();
                 intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, contentType);
+                intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,outputFile.getAbsolutePath());
                 setResult(Activity.RESULT_OK, intent);
                 finish();
             }
