@@ -6,6 +6,7 @@ import android.content.Intent;
 import com.baidu.ocr.ui.camera.CameraActivity;
 
 /**
+ * OCR入口工具
  * Created by Nick on 2019-08-26.
  */
 public class OCRUtil {
@@ -22,7 +23,7 @@ public class OCRUtil {
      *
      * @Override
      * protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-     *   if (requestCode == REQUEST_CODE_CAMERA && resultCode == Activity.RESULT_OK) {
+     *   if (requestCode == OCRUtil.REQUEST_CODE_CAMERA && resultCode == Activity.RESULT_OK) {
      *       if (data != null) {
      *           String contentType = data.getStringExtra(CameraActivity.KEY_CONTENT_TYPE);
      *           String filePath = data.getStringExtra(CameraActivity.KEY_OUTPUT_FILE_PATH);
