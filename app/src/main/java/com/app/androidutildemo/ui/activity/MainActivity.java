@@ -124,13 +124,13 @@ public class MainActivity extends SimpleBaseActivity {
 
     private void toIdPickActivity(){
         if (PermissionUtils.isGranted(PermissionConstants.STORAGE,PermissionConstants.CAMERA)){
-            OCRUtil.toIdPickActivity(this, PathUtils.getExternalDownloadsPath().concat("/pic.jpg"));
+            OCRUtil.toIdCardActivity(this, PathUtils.getExternalDownloadsPath().concat("/pic.jpg"));
         }else {
             PermissionUtils.permission(PermissionConstants.STORAGE,PermissionConstants.CAMERA)
                     .callback(new SimpleCallback() {
                         @Override
                         public void onGranted() {
-                            OCRUtil.toIdPickActivity(MainActivity.this, PathUtils.getExternalDownloadsPath().concat("/pic.jpg"));
+                            OCRUtil.toIdCardActivity(MainActivity.this, PathUtils.getExternalDownloadsPath().concat("/pic.jpg"));
                         }
 
                         @Override

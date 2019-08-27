@@ -41,7 +41,7 @@ public class OCRUtil {
      * @param context 上下文
      * @param path 文件保存路径
      */
-    public static void toIdPickActivity(Activity context,String path){
+    public static void toIdCardActivity(Activity context, String path){
         Intent intent = new Intent(context, CameraActivity.class);
         intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, path);
         intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
