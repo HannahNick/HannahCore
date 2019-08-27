@@ -11,9 +11,10 @@
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <application>
+    <application >
         <activity android:name="com.baidu.ocr.ui.camera.CameraActivity"
                   android:configChanges="screenSize|orientation" />
+
     </application>
 
 </manifest>
