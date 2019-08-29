@@ -19,7 +19,7 @@ public class OCRUtil {
     private OCRUtil(){}
 
     public static void toIdCardActivity(Activity context, String path){
-        toIdCardActivity(context,path,false);
+        toIdCardActivity(context,path,false,true);
     }
 
     public static void toBankCardActivity(Activity context, String path){
@@ -50,11 +50,12 @@ public class OCRUtil {
      * @param path 文件保存路径
      * @param canPickImg 是否显示图片选择
      */
-    public static void toIdCardActivity(Activity context, String path ,boolean canPickImg){
+    public static void toIdCardActivity(Activity context, String path ,boolean canPickImg,boolean isFront){
         Intent intent = new Intent(context, CameraActivity.class);
         intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, path);
         intent.putExtra(CameraActivity.KEY_SHOW_PICK_OPTION,canPickImg);
-        intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
+        intent.putExtra(CameraActivity.KEY_CONTENT_TYPE,
+                isFront?CameraActivity.CONTENT_TYPE_ID_CARD_FRONT:CameraActivity.CONTENT_TYPE_ID_CARD_BACK);
         context.startActivityForResult(intent, REQUEST_CODE_CAMERA);
     }
 
