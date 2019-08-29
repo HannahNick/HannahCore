@@ -96,15 +96,16 @@ public class CameraActivity extends Activity {
         lightButton = (ImageView) findViewById(R.id.light_button);
         lightButton.setOnClickListener(lightButtonOnClickListener);
         takePhotoBtn = (ImageView) findViewById(R.id.take_photo_button);
-        findViewById(R.id.album_button).setOnClickListener(albumButtonOnClickListener);
+
+        albumBtn = findViewById(R.id.album_button);
+        albumBtn.setOnClickListener(albumButtonOnClickListener);
         takePhotoBtn.setOnClickListener(takeButtonOnClickListener);
 
         // confirm result;
         displayImageView = (ImageView) findViewById(R.id.display_image_view);
         confirmResultContainer.findViewById(R.id.confirm_button).setOnClickListener(confirmButtonOnClickListener);
         confirmResultContainer.findViewById(R.id.cancel_button).setOnClickListener(confirmCancelButtonOnClickListener);
-        albumBtn = findViewById(R.id.rotate_button);
-        albumBtn.setOnClickListener(rotateButtonOnClickListener);
+        findViewById(R.id.rotate_button).setOnClickListener(rotateButtonOnClickListener);
         cropView = (CropView) findViewById(R.id.crop_view);
         cropContainer = (OCRCameraLayout) findViewById(R.id.crop_container);
         overlayView = (FrameOverlayView) findViewById(R.id.overlay_view);

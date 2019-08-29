@@ -22,6 +22,10 @@ public class OCRUtil {
         toIdCardActivity(context,path,false);
     }
 
+    public static void toBankCardActivity(Activity context, String path){
+        toBankCardActivity(context,path,false);
+    }
+
     /**
      * 身份证拍照
      *
@@ -66,11 +70,11 @@ public class OCRUtil {
      * @param context 上下文
      * @param path 文件保存路径
      */
-    public static void toBankCardActivity(Activity context,String path){
+    public static void toBankCardActivity(Activity context,String path,boolean canPickImg){
         Intent intent = new Intent(context, CameraActivity.class);
         intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, path);
-        intent.putExtra(CameraActivity.KEY_CONTENT_TYPE,
-                CameraActivity.CONTENT_TYPE_BANK_CARD);
+        intent.putExtra(CameraActivity.KEY_SHOW_PICK_OPTION,canPickImg);
+        intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_BANK_CARD);
         context.startActivityForResult(intent, REQUEST_CODE_BANKCARD);
     }
 
