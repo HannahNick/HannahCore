@@ -40,6 +40,7 @@ public class CameraActivity extends Activity {
     public static final String KEY_NATIVE_TOKEN = "nativeToken";
     public static final String KEY_NATIVE_ENABLE = "nativeEnable";
     public static final String KEY_NATIVE_MANUAL = "nativeEnableManual";
+    public static final String KEY_SHOW_PICK_OPTION = "showImagePick";
 
     public static final String CONTENT_TYPE_GENERAL = "general";
     public static final String CONTENT_TYPE_ID_CARD_FRONT = "IDCardFront";
@@ -57,6 +58,7 @@ public class CameraActivity extends Activity {
 
     private boolean isNativeEnable;
     private boolean isNativeManual;
+    private boolean isShowImagePick;
 
     private OCRCameraLayout takePictureContainer;
     private OCRCameraLayout cropContainer;
@@ -68,6 +70,7 @@ public class CameraActivity extends Activity {
     private FrameOverlayView overlayView;
     private MaskView cropMaskView;
     private ImageView takePhotoBtn;
+    private ImageView albumBtn;
     private PermissionCallback permissionCallback = new PermissionCallback() {
         @Override
         public boolean onRequestPermission() {
@@ -100,8 +103,8 @@ public class CameraActivity extends Activity {
         displayImageView = (ImageView) findViewById(R.id.display_image_view);
         confirmResultContainer.findViewById(R.id.confirm_button).setOnClickListener(confirmButtonOnClickListener);
         confirmResultContainer.findViewById(R.id.cancel_button).setOnClickListener(confirmCancelButtonOnClickListener);
-        findViewById(R.id.rotate_button).setOnClickListener(rotateButtonOnClickListener);
-
+        albumBtn = findViewById(R.id.rotate_button);
+        albumBtn.setOnClickListener(rotateButtonOnClickListener);
         cropView = (CropView) findViewById(R.id.crop_view);
         cropContainer = (OCRCameraLayout) findViewById(R.id.crop_container);
         overlayView = (FrameOverlayView) findViewById(R.id.overlay_view);
@@ -144,7 +147,7 @@ public class CameraActivity extends Activity {
         final String token = getIntent().getStringExtra(KEY_NATIVE_TOKEN);
         isNativeEnable = getIntent().getBooleanExtra(KEY_NATIVE_ENABLE, true);
         isNativeManual = getIntent().getBooleanExtra(KEY_NATIVE_MANUAL, false);
-
+        albumBtn.setVisibility(getIntent().getBooleanExtra(KEY_SHOW_PICK_OPTION, false)?View.VISIBLE:View.GONE);
         if (token == null && !isNativeManual) {
             isNativeEnable = false;
         }

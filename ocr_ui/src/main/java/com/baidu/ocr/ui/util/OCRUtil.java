@@ -18,6 +18,10 @@ public class OCRUtil {
 
     private OCRUtil(){}
 
+    public static void toIdCardActivity(Activity context, String path){
+        toIdCardActivity(context,path,false);
+    }
+
     /**
      * 身份证拍照
      *
@@ -40,10 +44,12 @@ public class OCRUtil {
      * }
      * @param context 上下文
      * @param path 文件保存路径
+     * @param canPickImg 是否显示图片选择
      */
-    public static void toIdCardActivity(Activity context, String path){
+    public static void toIdCardActivity(Activity context, String path ,boolean canPickImg){
         Intent intent = new Intent(context, CameraActivity.class);
         intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, path);
+        intent.putExtra(CameraActivity.KEY_SHOW_PICK_OPTION,canPickImg);
         intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
         context.startActivityForResult(intent, REQUEST_CODE_CAMERA);
     }

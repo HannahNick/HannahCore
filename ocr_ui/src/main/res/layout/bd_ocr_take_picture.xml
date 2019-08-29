@@ -28,8 +28,7 @@
             android:layout_marginLeft="@dimen/camera_left_margin"
             android:layout_marginStart="@dimen/camera_left_margin"
             android:layout_marginBottom="@dimen/camera_bottom_margin"
-            android:src="@drawable/bd_ocr_gallery"
-        android:visibility="gone"/>
+            android:src="@drawable/bd_ocr_gallery" />
 
 
     <ImageView
