@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.app.androidutildemo.R;
 import com.app.androidutildemo.SimpleBaseActivity;
+import com.app.androidutildemo.aop.Bury;
+import com.app.androidutildemo.aop.NickPermission;
 import com.app.androidutildemo.manager.HttpManager;
 import com.app.hannahcore.manager.file.FileDownLoadManager;
 import com.app.hannahcore.manager.file.FileDownLoadManager.SimpleListener;
@@ -71,8 +73,10 @@ public class MainActivity extends SimpleBaseActivity {
 //            checkVersion();
 //            getAllPermission();
 //            toIdScanActivity();
-            toIdPickActivity();
+//            toIdPickActivity();
 //            toBankCardActivity();
+//            saveOrder("hannah",29);
+            initPermission("hannah");
         });
         setStatusBarLightMode();
     }
@@ -123,6 +127,9 @@ public class MainActivity extends SimpleBaseActivity {
     }
 
     private void toIdPickActivity(){
+
+
+
         if (PermissionUtils.isGranted(PermissionConstants.STORAGE,PermissionConstants.CAMERA)){
             OCRUtil.toIdCardActivity(this, PathUtils.getExternalDownloadsPath().concat("/pic.jpg"),true,false);
         }else {
@@ -327,6 +334,7 @@ public class MainActivity extends SimpleBaseActivity {
                 });
     }
 
+
     private void checkSettingPermission(DataBean versionBean){
         boolean haveNewVersion = versionBean.isHaveNewVersion();
         if (!haveNewVersion){
@@ -374,4 +382,17 @@ public class MainActivity extends SimpleBaseActivity {
                 .update();
 
     }
+
+    @Bury
+    private void saveOrder(String name,int age){
+        Log.e("nick","执行订单提交");
+    }
+
+    @NickPermission(value = {PermissionConstants.STORAGE,PermissionConstants.CAMERA})
+    private void initPermission(String params){
+        Log.e("nick","执行业务逻辑");
+        ToastUtils.showShort("123");
+    }
+
+
 }

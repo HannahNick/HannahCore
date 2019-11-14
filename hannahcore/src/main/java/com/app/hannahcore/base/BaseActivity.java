@@ -17,7 +17,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
      */
     protected Toolbar mToolbar;
     protected TextView mToolbarTitle;
-    //不显示toolber
+    //不显示toolbar
     public static final int MODE_NONE = 0;
     //有返回按钮
     public static final int MODE_BACK = 1;
@@ -101,4 +101,5 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
      * @return
      */
     protected abstract T initPresenter();
+
 }

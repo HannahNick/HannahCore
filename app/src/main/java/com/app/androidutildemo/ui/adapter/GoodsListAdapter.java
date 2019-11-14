@@ -1,4 +1,4 @@
-package com.app.androidutildemo.adapter;
+package com.app.androidutildemo.ui.adapter;
 
 import com.app.androidutildemo.R;
 import com.app.androidutildemo.mvp.modle.TmsPoolListBean.DataBeanX.DataBean.RowsBean;

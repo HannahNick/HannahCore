@@ -1,4 +1,4 @@
-package com.app.androidutildemo.adapter;
+package com.app.androidutildemo.ui.adapter;
 
 import android.content.Context;
 import android.graphics.Color;

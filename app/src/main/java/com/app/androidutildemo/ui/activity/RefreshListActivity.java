@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.app.androidutildemo.R;
 import com.app.androidutildemo.SimpleBaseActivity;
-import com.app.androidutildemo.adapter.GoodsListAdapter;
+import com.app.androidutildemo.ui.adapter.GoodsListAdapter;
 import com.app.androidutildemo.decoration.ListViewDecoration;
 import com.app.androidutildemo.mvp.modle.TmsPoolListBean.DataBeanX.DataBean.RowsBean;
 import com.app.androidutildemo.mvp.presenters.RefreshListPresenter;

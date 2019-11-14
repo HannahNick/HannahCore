@@ -1,5 +1,7 @@
 package com.app.androidutildemo.http;
 
+import com.app.androidutildemo.mvp.modle.AppUpdateBean;
+import com.app.androidutildemo.mvp.modle.BaseBean;
 import com.app.androidutildemo.mvp.modle.TmsPoolListBean;
 import com.app.androidutildemo.mvp.modle.TmsRequestBean;
 import com.app.updateutil.VersionBean;
@@ -37,4 +39,12 @@ public interface Api {
      */
     @POST("VERSIONUPGRADE-HHJ-SERVICE/cs/checkVersion.apec")
     Observable<VersionBean> checkVersion(@Body RequestBody body);
+
+    /**
+     * 检查版本更新2
+     * @param body
+     * @return
+     */
+    @POST("VERSIONUPGRADE-HHJ-SERVICE/cs/checkVersion.apec")
+    Observable<BaseBean<AppUpdateBean>> checkVersion2(@Body RequestBody body);
 }

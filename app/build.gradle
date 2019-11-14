@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-aspectjx'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -26,6 +27,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation rootProject.ext.dependencies.appCompat
     implementation rootProject.ext.dependencies.constraintLayout
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation rootProject.ext.dependencies.junit
     androidTestImplementation rootProject.ext.dependencies.runner
     androidTestImplementation rootProject.ext.dependencies.espresso
@@ -50,20 +52,22 @@ dependencies {
     implementation rootProject.ext.dependencies.filedownloader
     //卡片式轮播图
     implementation rootProject.ext.dependencies.MZBannerView
+    //rxjava
+    implementation rootProject.ext.dependencies.rxlifecycle2
+    implementation rootProject.ext.dependencies.rxjava
+    implementation rootProject.ext.dependencies.rxandroid
     //网络库
     implementation rootProject.ext.dependencies.retrofit
     implementation rootProject.ext.dependencies.converterGson
     implementation rootProject.ext.dependencies.loggingInterceptor
     implementation rootProject.ext.dependencies.retrofit2Rxjava2Adapter
-    implementation rootProject.ext.dependencies.rxjava
-    implementation rootProject.ext.dependencies.rxandroid
     implementation rootProject.ext.dependencies.gson
     implementation rootProject.ext.dependencies.stetho_okhttp3
     //View动画依赖
     implementation rootProject.ext.dependencies.easing
     implementation rootProject.ext.dependencies.androidanimations
     //图片选择库
-    implementation (rootProject.ext.dependencies.imagepicker ){
+    implementation(rootProject.ext.dependencies.imagepicker) {
         exclude module: 'support-v4'
     }
 }

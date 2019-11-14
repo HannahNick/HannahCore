@@ -5,7 +5,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.app.androidutildemo.R;
-import com.app.androidutildemo.adapter.CmsListAdapter;
+import com.app.androidutildemo.ui.adapter.CmsListAdapter;
 import com.app.androidutildemo.bean.TmsWrapperBean;
 import com.app.androidutildemo.mvp.presenters.CmsListPresenter;
 import com.app.androidutildemo.mvp.view.CmsListView;
@@ -41,7 +41,7 @@ public class CmsListActivity extends BaseActivity<CmsListPresenter> implements C
 
     @Override
     protected void findViews() {
-        mRv_list = findViewById(R.id.lv_list);
+        mRv_list = findViewById(R.id.rv_list);
         mSrl_refresh = findViewById(R.id.srl_refresh);
     }
 

@@ -8,8 +8,8 @@ import android.view.View;
 
 import com.app.androidutildemo.SimpleBaseActivity;
 import com.app.androidutildemo.R;
-import com.app.androidutildemo.adapter.StreetAdapter;
-import com.app.androidutildemo.adapter.StreetSectionAdapter;
+import com.app.androidutildemo.ui.adapter.StreetAdapter;
+import com.app.androidutildemo.ui.adapter.StreetSectionAdapter;
 import com.app.androidutildemo.bean.StreetBean;
 import com.app.androidutildemo.bean.StreetBean.DataBean;
 import com.app.androidutildemo.bean.StreetBean.DataBean.SubBean;
