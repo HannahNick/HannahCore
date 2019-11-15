@@ -25,13 +25,13 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="755201d0-2456-441d-a398-49661e0fbb46">
-        <schema name="main" object-types="view, table, column" />
+        <schema name="main" object-types="view, column, table" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="755201d0-2456-441d-a398-49661e0fbb46">
-      <console name="sqltest" type="STANDARD" schema="main" session="Main"><![CDATA[create table if not exists user (
+      <console name="sqltest" type="STANDARD" schema="main" session="Main">create table if not exists user (
             id text primary key,
             name text,
             age integer,
@@ -44,7 +44,7 @@ select * from user where id='1';
 create table if not exists book(
     id text primary key,
     name text
-);]]></console>
+);</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

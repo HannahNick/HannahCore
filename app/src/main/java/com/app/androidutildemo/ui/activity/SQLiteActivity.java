@@ -1,13 +1,16 @@
 package com.app.androidutildemo.ui.activity;
 
+import android.database.Cursor;
+import android.net.Uri;
 import android.view.View;
 import android.widget.Button;
 
 import com.app.androidutildemo.R;
+import com.app.androidutildemo.db.SQLConstants;
 import com.app.androidutildemo.db.table.Book;
 import com.app.androidutildemo.db.table.User;
-import com.app.androidutildemo.db.SQLConstants;
 import com.app.androidutildemo.manager.DBManager;
+import com.app.androidutildemo.provider.TestContract;
 import com.app.hannahcore.base.BaseActivity;
 import com.app.hannahcore.base.BasePresenter;
 import com.blankj.utilcode.constant.PermissionConstants;
@@ -25,7 +28,7 @@ public class SQLiteActivity extends BaseActivity implements View.OnClickListener
     private Button mBtn_delete_user;
     private Button mBtn_save_book;
     private Button mBtn_get_book;
-
+    private Button mBtn_get_content_provider;
 
 
     @Override
@@ -42,6 +45,7 @@ public class SQLiteActivity extends BaseActivity implements View.OnClickListener
         mBtn_delete_user = findViewById(R.id.btn_delete_user);
         mBtn_save_book = findViewById(R.id.btn_save_book);
         mBtn_get_book = findViewById(R.id.btn_get_book);
+        mBtn_get_content_provider = findViewById(R.id.btn_get_content_provider);
     }
 
     @Override
@@ -59,6 +63,7 @@ public class SQLiteActivity extends BaseActivity implements View.OnClickListener
         mBtn_delete_user.setOnClickListener(this);
         mBtn_save_book.setOnClickListener(this);
         mBtn_get_book.setOnClickListener(this);
+        mBtn_get_content_provider.setOnClickListener(this);
     }
 
     @Override
@@ -94,6 +99,9 @@ public class SQLiteActivity extends BaseActivity implements View.OnClickListener
                 break;
             case R.id.btn_get_book:
                 getBook();
+                break;
+            case R.id.btn_get_content_provider:
+                getDataFromProvider();
                 break;
             default:
                 break;
@@ -136,5 +144,18 @@ public class SQLiteActivity extends BaseActivity implements View.OnClickListener
         LogUtils.i(book.toString());
     }
 
-
+    private void getDataFromProvider(){
+        Cursor cursor = getContentResolver().query(Uri.parse("content://"+TestContract.CONTENT_AUTHORITY+"/"+TestContract.PATH_TEST), new String[]{"id", "name", "age", "sex"}, null, null, null);
+        if (cursor!=null){
+            int id = cursor.getColumnIndex("id");
+            int name = cursor.getColumnIndex("name");
+            int age = cursor.getColumnIndex("age");
+            int sex = cursor.getColumnIndex("sex");
+            while (cursor.moveToNext()){
+                User user = new User(cursor.getString(id), cursor.getString(name), cursor.getInt(age), cursor.getString(sex));
+                LogUtils.i(user.toString());
+            }
+            cursor.close();
+        }
+    }
 }

@@ -55,6 +55,10 @@ public class DBManager {
         return mBookDao;
     }
 
+    public SQLiteDatabase getSQLiteDatabase(){
+        return mSQLiteDatabase;
+    }
+
     private void showDataBase(SQLiteDatabase sqLiteDatabase){
         List<Pair<String, String>> attachedDbs = sqLiteDatabase.getAttachedDbs();
         for (int i = 0; i < attachedDbs.size(); i++) {
